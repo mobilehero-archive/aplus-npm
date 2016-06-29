@@ -1,16 +1,49 @@
-var path = require("path");
+"use strict";
+/***
+ *                          __     _  __       __                     
+ *       ____ ___   ____   / /_   (_)/ /___   / /_   ___   _____ ____ 
+ *      / __ `__ \ / __ \ / __ \ / // // _ \ / __ \ / _ \ / ___// __ \ 
+ *     / / / / / // /_/ // /_/ // // //  __// / / //  __// /   / /_/ / 
+ *    /_/ /_/ /_/ \____//_.___//_//_/ \___//_/ /_/ \___//_/    \____/ 
+ *                                                                    
+ *                  mobile solutions for everyday heroes
+ *                                                                    
+ * @file 
+ * Alloy+ => Alloy+ plugin for executing npm during build process
+ * 
+ * @module 
+ * alloy-npm
+ * 
+ * @author 
+ * Brenton House <brenton.house@gmail.com>
+ * 
+ * @copyright
+ * Copyright (c) 2016 by Superhero Studios Incorporated.  All Rights Reserved.
+ *      
+ * @license
+ * Licensed under the terms of the MIT License (MIT)
+ * Please see the LICENSE.md included with this distribution for details.
+ * 
+ */
+
 var _ = require('lodash');
 
-function alloy_npm(params, directory) {
-	var args = Array.prototype.slice.call(arguments);
-	//console.log("args: " + JSON.stringify(args));
+function alloy_npm(params) {
 
-	directory = directory || params.event.dir.lib;
-	params.logger.trace("running npm in directory: " + directory);
+	params.dirname = params.dirname || params.event.dir.lib;
+	params.args = params.args || ["install"]
+
+	params.dirname = params.dirname ? _.template(params.dirname)(params) : params.event.dir.lib;
+	params.args = params.args ? _.map(params.args, function(arg) {
+		return _.template(arg)(params);
+	}) : ["install"];
+
+	params.logger.trace("running npm in directory: " + params.dirname);
+	params.logger.trace("npm " + params.args.join(" "));
 
 	var spawn = require("./spawn");
-	return spawn.sync("npm", ["install"], {
-		cwd: directory
+	return spawn.sync("npm", params.args, {
+		cwd: params.dirname
 	});
 }
 

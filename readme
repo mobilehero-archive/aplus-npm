@@ -55,15 +55,15 @@ To use this installed plugin in your app, merge the following to your app's `con
   {
       "global": {
             "tasks": {
-                  "preload": [ "@mobile/alloy-npm" ]
+                  "preload": [ "alloy-npm" ]
             }
       }
 ```
 
 By default, the command will run `npm install` in the `lib` directory of your Appcelerator project.
 
-To run a different command, simply change the reference to this module in your `config.json` file to the desired command.  
-The first argument to the plugin will need to be the directory location that you want this run in.  
+To run a different command, see the examples below. 
+
 You will have some Alloy objects available for use as [templated code](https://lodash.com/docs#template). 
 
 >_Most often, you will probably want to run these in the `preload` stage of the Alloy build process so that 
@@ -72,14 +72,29 @@ any changes done by this plugin can get picked up before copying files over to t
 ### Examples
 
 **Install packages in lib directory**  
-&nbsp;&nbsp;&nbsp;&nbsp;`"preload": [ "@mobile/alloy-npm" ]`
+&nbsp;&nbsp;&nbsp;&nbsp;`"preload": [ "alloy-npm" ]`
 
 **Update packages in lib directory**  
-&nbsp;&nbsp;&nbsp;&nbsp;`"preload": [ "@mobile/alloy-npm ${event.dir.lib} update" ]`
+```json
+"preload": [ 
+      {
+      "id": "alloy-npm",
+      "dirname": "${event.dir.lib}",
+      "args": ["install"]
+      } 
+    ]
+```
 
-**Install `bluebird` package in lib directory**  
-&nbsp;&nbsp;&nbsp;&nbsp;`"preload": [ "@mobile/alloy-npm ${event.dir.lib} install @mobile/bluebird" ]`
-
+**Install (and save) `bluebird` package in lib directory**  
+```json
+"preload": [ 
+      {
+      "id": "alloy-npm",
+      "dirname": "${event.dir.lib}",
+      "args": ["install", "@mobile/bluebird", "--save"]
+      } 
+    ]
+```
 
 
 ## Other Alloy+ Plugins 
