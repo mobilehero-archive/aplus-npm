@@ -30,9 +30,6 @@ var _ = require('lodash');
 
 function alloy_npm(params) {
 
-	params.dirname = params.dirname || params.event.dir.lib;
-	params.args = params.args || ["install"]
-
 	params.dirname = params.dirname ? _.template(params.dirname)(params) : params.event.dir.lib;
 	params.args = params.args ? _.map(params.args, function(arg) {
 		return _.template(arg)(params);

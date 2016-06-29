@@ -1,6 +1,6 @@
 {
   "name": "alloy-npm",
-  "version": "0.0.3-beta.2",
+  "version": "0.0.3-beta.3",
   "description": "Alloy+ plugin for executing npm during build process",
   "keywords": [
     "mobilehero",
