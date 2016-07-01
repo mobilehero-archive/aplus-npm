@@ -1,6 +1,6 @@
 {
-  "name": "alloy-npm",
-  "version": "0.0.3-beta.3",
+  "name": "@aplus/npm",
+  "version": "0.0.5-beta.1",
   "description": "Alloy+ plugin for executing npm during build process",
   "keywords": [
     "mobilehero",
@@ -8,11 +8,13 @@
     "alloy",
     "alloy-plus",
     "titanium",
-    "plugin"
+    "plugin",
+    "npm",
+    "aplus"
   ],
-  "homepage": "git://github.com/mobilehero/alloy-npm",
+  "homepage": "git://github.com/mobilehero/aplus-npm",
   "bugs": {
-    "url": "https://github.com/mobilehero/alloy-npm/issues",
+    "url": "https://github.com/mobilehero/aplus-npm/issues",
     "email": "info@mobilehero.me"
   },
   "license": "MIT",
@@ -21,7 +23,7 @@
     "email": "brenton.house@gmail.com",
     "url": "https://github.com/brentonhouse"
   },
-  "main": "./alloy-npm.js",
+  "main": "./aplus-npm.js",
   "scripts": {
     "add": "git add -A",
     "add-version": "npm run add && node scripts/version",
@@ -31,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mobilehero/alloy-npm.git"
+    "url": "git://github.com/mobilehero/aplus-npm.git"
   },
   "devDependencies": {
     "lodash": "^4.13.1",

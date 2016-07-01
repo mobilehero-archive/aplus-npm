@@ -9,10 +9,10 @@
  *                  mobile solutions for everyday heroes
  *                                                                    
  * @file 
- * Alloy+ => Alloy+ plugin for executing npm during build process
+ * Alloy+ plugin for executing npm during build process
  * 
  * @module 
- * alloy-npm
+ * @aplus/npm
  * 
  * @author 
  * Brenton House <brenton.house@gmail.com>
@@ -28,7 +28,7 @@
 
 var _ = require('lodash');
 
-function alloy_npm(params) {
+function plugin(params) {
 
 	params.dirname = params.dirname ? _.template(params.dirname)(params) : params.event.dir.lib;
 	params.args = params.args ? _.map(params.args, function(arg) {
@@ -44,4 +44,4 @@ function alloy_npm(params) {
 	});
 }
 
-module.exports = alloy_npm;
+module.exports = plugin;
