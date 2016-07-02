@@ -126,7 +126,7 @@ any changes done by this plugin can get picked up before copying files over to t
 
 ## Other Alloy+ Plugins 
 
-> ** Coming Soon! :mega: **
+> **Coming Soon! :mega:**
 
 - [`underscore`][]: Fix some issues with the usage of underscore in Alloy and allow upgrading to lodash
 - [`babel`][]: Run babel transformations on your code during the build process
