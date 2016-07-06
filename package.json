@@ -1,6 +1,6 @@
 {
   "name": "@aplus/npm",
-  "version": "0.0.5-beta.3",
+  "version": "0.0.5-beta.4",
   "description": "Alloy+ plugin for executing npm during build process",
   "keywords": [
     "mobilehero",
@@ -30,7 +30,7 @@
     "add-version": "node scripts/version",
     "push": "npm run commit --",
     "commit": "npm run add-version --",
-    "postpush": "git push",
+    "postpush": "git push && git push --tags",
     "autopull": "node scripts/autopull"
   },
   "repository": {
