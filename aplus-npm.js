@@ -44,4 +44,12 @@ function plugin(params) {
 	});
 }
 
-module.exports = plugin;
+module.exports.execute = plugin;
+module.exports.tasks = [
+	{
+		"module": module.id,
+		"dirname": "${event.dir.lib}",
+		"args": ["install"],
+		"events": "preload"
+	}
+]

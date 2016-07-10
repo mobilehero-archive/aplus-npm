@@ -31,8 +31,10 @@
 ## Overview
 
 ### Why should I use this plugin?
-[Alloy+][] plugin [`underscore`][] is a plugin for executing [npm][] during the Appelerator Alloy build process.
-You can use this plugin to install or update npm packages necessary for your Appcelerator Alloy mobile project.
+
+[Alloy+][] plugin [`underscore`][] is a plugin for executing [npm][] during the
+Appelerator Alloy build process. You can use this plugin to install or update
+npm packages necessary for your Appcelerator Alloy mobile project.
 
 ### What is Alloy+?
 
@@ -82,9 +84,8 @@ To use this installed plugin in your app, merge the following to your app's `con
 
 ```json
 	{
-		"tasks": {
-			"preload": [ "@aplus/npm" ]
-		}
+		"tasks": [ "@aplus/npm" ]
+	}
 ```
 
 By default, the command will run `npm install` in the `lib` directory of your Appcelerator project.
@@ -101,30 +102,32 @@ any changes done by this plugin can get picked up before copying files over to t
 **Install packages in lib directory**  
 &nbsp;&nbsp;&nbsp;&nbsp;`"preload": [ "@aplus/npm" ]`
 
-**Update packages in lib directory**  
+**Update packages in lib directory**
+
 ```json
-"preload": [ 
+"tasks": [
 			{
-			"id": "@aplus/npm",
+			"module": "@aplus/npm",
 			"dirname": "${event.dir.lib}",
 			"args": ["install"]
-			} 
+			}
 		]
 ```
 
-**Install (and save) `bluebird` package in lib directory**  
+**Install (and save) `bluebird` package in lib directory**
+
 ```json
-"preload": [ 
+"tasks": [
 			{
-			"id": "@aplus/npm",
+			"module": "@aplus/npm",
 			"dirname": "${event.dir.lib}",
 			"args": ["install", "@mobile/bluebird", "--save"]
-			} 
+			}
 		]
 ```
 
 
-## Other Alloy+ Plugins 
+## Other Alloy+ Plugins
 
 > **Coming Soon! :mega:**
 
@@ -150,13 +153,13 @@ See the [license.md](https://github.com/mobilehero/aplus-core/blob/master/licens
 
 Superhero Studios Incorporated and this project are in no way affiliated with any of the following companies:
 
-* _Appcelerator, Inc_
-* _Axway Inc_
-* _Apple Inc_
-* _Google Inc_
+- _Appcelerator, Inc_
+- _Axway Inc_
+- _Apple Inc_
+- _Google Inc_
 
 _Alloy is developed by Appcelerator and the community and is Copyright (c) 2012 by Appcelerator, Inc. All Rights Reserved. 
-Alloy is made available under the Apache Public License, version 2. See their [LICENSE](https://github.com/appcelerator/alloy/blob/master/LICENSE) file for more information._
+Alloy is made available under the Apache Public License, version 2. See their [license](https://github.com/appcelerator/alloy/blob/master/LICENSE) file for more information._
 
 [alloy]: https://github.com/appcelerator/alloy  "alloy"
 [npm]: https://www.npmjs.com/    "npm"
