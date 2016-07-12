@@ -100,7 +100,7 @@ any changes done by this plugin can get picked up before copying files over to t
 ### Examples
 
 **Install packages in lib directory**  
-&nbsp;&nbsp;&nbsp;&nbsp;`"preload": [ "@aplus/npm" ]`
+&nbsp;&nbsp;&nbsp;&nbsp;`"tasks": [ "@aplus/npm" ]`
 
 **Update packages in lib directory**
 
@@ -131,10 +131,11 @@ any changes done by this plugin can get picked up before copying files over to t
 
 > **Coming Soon! :mega:**
 
-- [`underscore`][]: Fix some issues with the usage of underscore in Alloy and allow upgrading to lodash
 - [`babel`][]: Run babel transformations on your code during the build process
 - [`es6`][]: Use ES6/ES2015 code in your apps via babel transformations!
 - [`node`][]: Make `require` statements in your app support nodejs packages installed via npm
+- [`npm`][]: Execute npm during the Alloy build process
+- [`underscore`][]: Fix some issues with the usage of underscore in Alloy and allow upgrading to lodash
 
 _You can also search for more plugins developed by the community._
 
