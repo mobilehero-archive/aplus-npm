@@ -1,6 +1,6 @@
 {
 	"name": "@aplus/npm",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "⭐  Axway Amplify module for executing npm during build process for Appcelerator Titanium SDK",
 	"keywords": [
 		"mobilehero",
@@ -46,7 +46,7 @@
 		"type": "git",
 		"url": "git://github.com/mobilehero-archive/aplus-npm.git"
 	},
-	"devDependencies": {
+	"dependencies": {
 		"@geek/logger": "^1.0.17",
 		"@titanium/errors": "^1.0.2",
 		"@titanium/eslint-config": "^1.0.8",
