@@ -1,47 +1,63 @@
 {
-  "name": "@aplus/npm",
-  "version": "0.0.5-beta.6",
-  "description": "Alloy+ plugin for executing npm during build process",
-  "keywords": [
-    "mobilehero",
-    "appcelerator",
-    "alloy",
-    "alloy-plus",
-    "titanium",
-    "plugin",
-    "npm",
-    "aplus"
-  ],
-  "homepage": "git://github.com/mobilehero/aplus-npm",
-  "bugs": {
-    "url": "https://github.com/mobilehero/aplus-npm/issues",
-    "email": "info@mobilehero.me"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Brenton House",
-    "email": "brenton.house@gmail.com",
-    "url": "https://github.com/brentonhouse"
-  },
-  "main": "./aplus-npm.js",
-  "scripts": {
-    "add": "git add -A",
-    "preadd-version": "npm run add",
-    "add-version": "node scripts/version",
-    "push": "npm run commit --",
-    "commit": "npm run add-version --",
-    "postpush": "git push && git push --tags",
-    "autopull": "node scripts/autopull"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mobilehero/aplus-npm.git"
-  },
-  "devDependencies": {
-    "lodash": "^4.13.1",
-    "semver": "^5.1.0"
-  },
-  "engines": {
-    "node": ">=0.10"
-  }
+	"name": "@aplus/npm",
+	"version": "1.0.1",
+	"description": "⭐  Axway Amplify module for executing npm during build process for Appcelerator Titanium SDK",
+	"keywords": [
+		"mobilehero",
+		"appcelerator",
+		"alloy",
+		"alloy-plus",
+		"titanium",
+		"npm",
+		"aplus",
+		"sdk",
+		"plugin",
+		"amplify",
+		"api-builder",
+		"appcelerator-titanium",
+		"titanium-sdk",
+		"titanium-mobile",
+		"titanium-module",
+		"axway-sdk",
+		"axway-amplify",
+		"brenton-house"
+	],
+	"homepage": "https://brenton.house/saying-goodbye-to-axway-amplify-titanium-31a44f3671de",
+	"bugs": {
+		"url": "https://github.com/mobilehero-archive/aplus-npm/issues",
+		"email": "info@mobilehero.me"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Brenton House",
+		"email": "brenton.house@gmail.com",
+		"url": "https://github.com/brentonhouse"
+	},
+	"main": "./aplus-npm.js",
+	"scripts": {
+		"lint": "eslint . --fix",
+		"list": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+		"prep": "npm install --ignore-scripts && npm run list",
+		"test": "npm run prep",
+		"prepublishOnly2": "git pull && npm test && bump insane",
+		"prepublishOnly": "git pull && npm test && npm audit fix && bump insane"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/mobilehero-archive/aplus-npm.git"
+	},
+	"devDependencies": {
+		"@geek/logger": "^1.0.17",
+		"@titanium/errors": "^1.0.2",
+		"@titanium/eslint-config": "^1.0.8",
+		"@titanium/essentials": "^1.0.35",
+		"@titanium/module-copier": "^1.0.13",
+		"@titanium/polyfill": "^1.0.15",
+		"@titanium/tiapp-xml": "^1.0.11",
+		"lodash": "^4.17.21",
+		"semver": "^7.3.5"
+	},
+	"engines": {
+		"node": ">=8.10.0"
+	}
 }
