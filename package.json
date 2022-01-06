@@ -1,6 +1,6 @@
 {
 	"name": "@aplus/npm",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "⭐  Axway Amplify module for executing npm during build process for Appcelerator Titanium SDK",
 	"keywords": [
 		"mobilehero",
