@@ -1,6 +1,6 @@
 {
 	"name": "@aplus/npm",
-	"version": "1.0.34",
+	"version": "1.0.35",
 	"description": "⭐  Axway Amplify module for executing npm during build process for Appcelerator Titanium SDK",
 	"keywords": [
 		"mobilehero",
@@ -49,7 +49,7 @@
 		"@geek/config": "^1.0.1",
 		"@geek/dotenv": "^0.0.9",
 		"@geek/eslint-config": "^1.0.3",
-		"@geek/jsonc": "^1.0.6",
+		"@geek/jsonc": "^1.0.8",
 		"@geek/jwt": "^1.0.1",
 		"@geek/logger": "^1.0.18",
 		"@geek/retry": "^1.0.0",
@@ -57,9 +57,9 @@
 		"@geek/spinner": "^1.0.2",
 		"@geek/tld": "^2.0.1-1",
 		"@nativeloop/mobile": "^1.0.35",
-		"@titanium/appcelerator": "^6.0.33",
+		"@titanium/appcelerator": "^6.0.34",
 		"@titanium/authentication": "^1.0.46",
-		"@titanium/authentication-mock": "^1.0.30",
+		"@titanium/authentication-mock": "^1.0.31",
 		"@titanium/authentication-oauth": "^1.0.49",
 		"@titanium/bluebird": "^3.7.39",
 		"@titanium/errors": "^1.0.35",
